@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Ulang Tahun Wulan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffd6ec, #ffe6f2);
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 60px 20px;
+      color: #c2185b;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #ad1457;
+    }
+
+    .cake {
+      margin: 40px auto;
+      width: 180px;
+      height: 160px;
+      position: relative;
+    }
+
+    .layer {
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      background: pink;
+      border-radius: 10px;
+      box-shadow: 0 4px #e91e63;
+    }
+
+    .layer:nth-child(1) { top: 0; background: #f8bbd0; }
+    .layer:nth-child(2) { top: 40px; background: #f48fb1; }
+    .layer:nth-child(3) { top: 80px; background: #ec407a; }
+
+    .candle {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 30px;
+      background: #ff4081;
+      border-radius: 2px;
+    }
+
+    .flame {
+      width: 12px;
+      height: 12px;
+      background: orange;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 0.5s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+      50% { transform: translateX(-50%) scale(1.2); opacity: 0.7; }
+    }
+
+    .flowers {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .flower {
+      position: absolute;
+      background-image: url('https://pngimg.com/uploads/flower/flower_PNG102.png');
+      background-size: cover;
+      opacity: 0.7;
+      animation: floatDown 12s infinite ease-in;
+    }
+
+    @keyframes floatDown {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .ucapan {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px 80px;
+    }
+
+    .ucapan p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #880e4f;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .flower-floor {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background-image: url('https://pngimg.com/uploads/flower/flower_PNG102.png');
+      background-repeat: repeat-x;
+      background-size: contain;
+      z-index: 0;
+      animation: flowerScroll 20s linear infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes flowerScroll {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 0; }
+    }
+
+    .confetti {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-image:
+        radial-gradient(circle, #ff69b4 2px, transparent 3px),
+        radial-gradient(circle, #ffb6c1 2px, transparent 3px),
+        radial-gradient(circle, #f8bbd0 2px, transparent 3px);
+      background-size: 20px 20px;
+      background-repeat: repeat;
+      z-index: 1;
+      animation: confettiMove 15s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes confettiMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 0; }
+    }
+
+    .footer-ucapan {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 1.3em;
+      color: #880e4f;
+    }
+
+    /* 🌺 Bunga batang jatuh sebentar */
+    .quick-flowers {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    .quick-flower {
+      position: absolute;
+      width: 70px;
+      height: auto;
+      background-image: url('https://i.imgur.com/4IKx8fK.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 1;
+      animation: fallQuick 6s ease-in forwards;
+    }
+
+    @keyframes fallQuick {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(180deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Selamat Ulang Tahun Wulan!</h1>
+    <p>Semoga harimu dipenuhi warna manis seperti kue dan bunga 🎉</p>
+
+    <div class="cake">
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ucapan" id="ucapan-container"></div>
+
+  <div class="flower-floor"></div>
+  <div class="confetti"></div>
+  <div class="flowers" id="flowers-container"></div>
+  <div class="quick-flowers" id="quick-flowers-container"></div>
+
+  <div class="footer-ucapan">
+    🌷 Terima kasih telah melihat halaman ulang tahun Wulan! Semoga hari ini penuh cinta 💕
+  </div>
+
+  <script>
+    // Ucapan ulang tahun banyak
+    const ucapanList = [
+      "🎂 Selamat ulang tahun, Wulan!",
+      "🌸 Semoga selalu ceria seperti bunga mekar!",
+      "🎈 Semoga sukses selalu menyertaimu!",
+      "💖 Tetap jadi Wulan yang hebat!",
+      "🍰 Hari ini harus penuh senyum!",
+      "✨ Semua harapanmu semoga terkabul!"
+    ];
+    const ucapanContainer = document.getElementById('ucapan-container');
+    for (let i = 0; i < 40; i++) {
+      ucapanList.forEach(text => {
+        const p = document.createElement('p');
+        p.textContent = text;
+        ucapanContainer.appendChild(p);
+      });
+    }
+
+    // Bunga jatuh biasa (200)
+    const flowerCount = 200;
+    const flowerContainer = document.getElementById('flowers-container');
+
+    for (let i = 0; i < flowerCount; i++) {
+      const flower = document.createElement('div');
+      flower.className = 'flower';
+      const size = 30 + Math.random() * 30;
+      flower.style.width = flower.style.height = size + 'px';
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDelay = Math.random() * 20 + 's';
+      flower.style.animationDuration = 8 + Math.random() * 8 + 's';
+      flower.style.transform = `rotate(${Math.random() * 360}deg)`;
+      flowerContainer.appendChild(flower);
+    }
+
+    // Bunga dengan batang, jatuh sebentar
+    const quickContainer = document.getElementById('quick-flowers-container');
+    for (let i = 0; i < 15; i++) {
+      const flower = document.createElement('div');
+      flower.className = 'quick-flower';
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDelay = (Math.random() * 2).toFixed(1) + 's';
+      quickContainer.appendChild(flower);
+    }
+
+    // Hapus efek bunga batang setelah 10 detik
+    setTimeout(() => {
+      quickContainer.remove();
+    }, 10000);
+  </script>
+</body>
+</html>
